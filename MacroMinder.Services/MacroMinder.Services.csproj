@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IngredientService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MacroMinder.Data\MacroMinder.Data.csproj">
+      <Project>{dd01a70a-b316-43e0-b2ef-8931f798bf86}</Project>
+      <Name>MacroMinder.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MacroMinder.Models\MacroMinder.Models.csproj">
+      <Project>{85de77f7-fc31-494a-b0d3-1179c18e0852}</Project>
+      <Name>MacroMinder.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

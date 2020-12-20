@@ -57,9 +57,17 @@
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Ingredient.cs" />
     <Compile Include="IngredientList.cs" />
-    <Compile Include="Migrations\202012170106406_First Migration.cs" />
-    <Compile Include="Migrations\202012170106406_First Migration.Designer.cs">
-      <DependentUpon>202012170106406_First Migration.cs</DependentUpon>
+    <Compile Include="Migrations\202012201830392_First Migration.cs" />
+    <Compile Include="Migrations\202012201830392_First Migration.Designer.cs">
+      <DependentUpon>202012201830392_First Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012201845164_Updated Ingredient Names.cs" />
+    <Compile Include="Migrations\202012201845164_Updated Ingredient Names.Designer.cs">
+      <DependentUpon>202012201845164_Updated Ingredient Names.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012201905366_Updated Unit Enum.cs" />
+    <Compile Include="Migrations\202012201905366_Updated Unit Enum.Designer.cs">
+      <DependentUpon>202012201905366_Updated Unit Enum.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,8 +79,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012170106406_First Migration.resx">
-      <DependentUpon>202012170106406_First Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012201830392_First Migration.resx">
+      <DependentUpon>202012201830392_First Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012201845164_Updated Ingredient Names.resx">
+      <DependentUpon>202012201845164_Updated Ingredient Names.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012201905366_Updated Unit Enum.resx">
+      <DependentUpon>202012201905366_Updated Unit Enum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

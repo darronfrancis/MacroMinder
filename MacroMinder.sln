@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacroMinder.Models", "Macro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacroMinder.Services", "MacroMinder.Services\MacroMinder.Services.csproj", "{524F75A1-1A63-4BAC-9FF3-A8EFCF8AD508}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{9847C3E4-5C19-4C24-BB6B-4726E9E864EB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DD01A70A-B316-43E0-B2EF-8931F798BF86} = {DD01A70A-B316-43E0-B2EF-8931F798BF86}
+		{85DE77F7-FC31-494A-B0D3-1179C18E0852} = {85DE77F7-FC31-494A-B0D3-1179C18E0852}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +39,10 @@ Global
 		{524F75A1-1A63-4BAC-9FF3-A8EFCF8AD508}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{524F75A1-1A63-4BAC-9FF3-A8EFCF8AD508}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{524F75A1-1A63-4BAC-9FF3-A8EFCF8AD508}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9847C3E4-5C19-4C24-BB6B-4726E9E864EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9847C3E4-5C19-4C24-BB6B-4726E9E864EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9847C3E4-5C19-4C24-BB6B-4726E9E864EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9847C3E4-5C19-4C24-BB6B-4726E9E864EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

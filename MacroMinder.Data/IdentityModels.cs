@@ -22,6 +22,7 @@ namespace MacroMinder.Data
         public enum Sex { male = 1, female = 2}
         public enum Goal { lose = 1, gain = 2, maintain = 3}
 
+        public string User { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime Birthday { get; set; }
@@ -32,18 +33,20 @@ namespace MacroMinder.Data
         public Goal DietaryGoal { get; set; }
     }
 
-    public class AppUsersDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public AppUsersDbContext()
+        public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
         public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<RecipeSteps> RecipeSteps { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
 
-        public static AppUsersDbContext Create()
+        public static ApplicationDbContext Create()
         {
-            return new AppUsersDbContext();
+            return new ApplicationDbContext();
         }
     }
 }

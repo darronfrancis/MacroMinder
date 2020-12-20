@@ -9,7 +9,7 @@ namespace MacroMinder.Data
 {
     public class IngredientList
     {
-        public enum IngredientMeasurementUnit { teaspoon = 1, tablespoon, cup, ounce, pint, quart, gallon, pound }
+        public enum IngredientMeasurementUnit { teaspoon = 1, tablespoon, cup, ounce, pint, quart, gallon, pound, unit }
 
         public int IngredientListID { get; set; }
         public Recipe RecipeID { get; set; }

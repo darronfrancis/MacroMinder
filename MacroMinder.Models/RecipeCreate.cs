@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace MacroMinder.Models
 {
-    /*public class RecipeCreate
+    public class RecipeCreate
     {
         [Required]
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         [MaxLength(50, ErrorMessage = "There are too many characters in this field.")]
-        public virtual ICollection<RecipeSteps> RecipeSteps { get; set; }
-        public virtual ICollection<Ingredient> Ingredients { get; set; }
+        public virtual ICollection<RecipeStepsCreate> RecipeSteps { get; set; }
+        public virtual ICollection<IngredientCreate> Ingredients { get; set; }
         public string RecipeName { get; set; }
-        public double IngredientMeasurement { get; set; }
-        public IngredientMeasurementUnit IngredientUnit { get; set; }
-    }*/
+    }
 }
