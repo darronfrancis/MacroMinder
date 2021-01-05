@@ -3,7 +3,7 @@ namespace MacroMinder.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class FirstMigration : DbMigration
+    public partial class firstmigration : DbMigration
     {
         public override void Up()
         {
@@ -16,9 +16,9 @@ namespace MacroMinder.Data.Migrations
                         IngredientShared = c.Boolean(nullable: false),
                         IngredientQuantity = c.Int(nullable: false),
                         IngredientQuantityUnitOfMeasurement = c.Int(nullable: false),
-                        Proteins = c.Double(nullable: false),
+                        Protein = c.Double(nullable: false),
                         Carbohydrates = c.Double(nullable: false),
-                        Fats = c.Double(nullable: false),
+                        Fat = c.Double(nullable: false),
                         Calories = c.Double(nullable: false),
                         DietaryFiber = c.Double(nullable: false),
                         ApplicationUserId = c.Guid(nullable: false),
@@ -45,6 +45,7 @@ namespace MacroMinder.Data.Migrations
                         Height = c.Int(nullable: false),
                         BMR = c.Int(nullable: false),
                         DietaryGoal = c.Int(nullable: false),
+                        IngredientOwner = c.String(),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -110,7 +111,7 @@ namespace MacroMinder.Data.Migrations
                 .PrimaryKey(t => t.RecipeID);
             
             CreateTable(
-                "dbo.IngredientLists",
+                "dbo.RecipeIngredients",
                 c => new
                     {
                         IngredientListID = c.Int(nullable: false, identity: true),
@@ -155,16 +156,16 @@ namespace MacroMinder.Data.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.Ingredients", "RecipeID", "dbo.Recipes");
             DropForeignKey("dbo.RecipeSteps", "RecipeID", "dbo.Recipes");
-            DropForeignKey("dbo.IngredientLists", "RecipeID_RecipeID", "dbo.Recipes");
-            DropForeignKey("dbo.IngredientLists", "IngredientID_IngredientID", "dbo.Ingredients");
-            DropForeignKey("dbo.Ingredients", "IngredientOwner_Id", "dbo.AspNetUsers");
+            DropForeignKey("dbo.RecipeIngredients", "RecipeID_RecipeID", "dbo.Recipes");
+            DropForeignKey("dbo.RecipeIngredients", "IngredientID_IngredientID", "dbo.Ingredients");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Ingredients", "IngredientOwner_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.RecipeSteps", new[] { "RecipeID" });
-            DropIndex("dbo.IngredientLists", new[] { "RecipeID_RecipeID" });
-            DropIndex("dbo.IngredientLists", new[] { "IngredientID_IngredientID" });
+            DropIndex("dbo.RecipeIngredients", new[] { "RecipeID_RecipeID" });
+            DropIndex("dbo.RecipeIngredients", new[] { "IngredientID_IngredientID" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
@@ -174,7 +175,7 @@ namespace MacroMinder.Data.Migrations
             DropIndex("dbo.Ingredients", new[] { "RecipeID" });
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.RecipeSteps");
-            DropTable("dbo.IngredientLists");
+            DropTable("dbo.RecipeIngredients");
             DropTable("dbo.Recipes");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");

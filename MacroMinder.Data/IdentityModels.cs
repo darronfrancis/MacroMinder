@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -31,6 +32,8 @@ namespace MacroMinder.Data
         public int Height { get; set; }
         public int BMR { get; set; }
         public Goal DietaryGoal { get; set; }
+        public virtual ICollection<Ingredient> Ingredients { get; set; }
+        public string IngredientOwner { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

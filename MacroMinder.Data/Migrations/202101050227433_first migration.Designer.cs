@@ -7,13 +7,13 @@ namespace MacroMinder.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class UpdatedUnitEnum : IMigrationMetadata
+    public sealed partial class firstmigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdatedUnitEnum));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(firstmigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202012201905366_Updated Unit Enum"; }
+            get { return "202101050227433_first migration"; }
         }
         
         string IMigrationMetadata.Source

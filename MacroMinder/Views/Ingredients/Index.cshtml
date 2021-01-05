@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MacroMinder.Models.Ingredient>
+﻿@model IEnumerable<MacroMinder.Models.IngredientList>
 
 @{
     ViewBag.Title = "Index";
@@ -12,28 +12,31 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.IngredientID)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.IngredientName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.IngredientShared)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.IngredientQuantity)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.IngredientQuantityUnitOfMeasurement)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.IngredientQuantity)
+            @Html.DisplayNameFor(model => model.Calories)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Protein)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Carbohydrates)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Fat)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Calories)
+            @Html.DisplayNameFor(model => model.Carbohydrates)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DietaryFiber)
@@ -43,7 +46,9 @@
 
 @foreach (var item in Model) {
     <tr>
-
+        <td>
+            @Html.DisplayFor(modelItem => item.IngredientID)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.IngredientName)
         </td>
@@ -57,16 +62,16 @@
             @Html.DisplayFor(modelItem => item.IngredientQuantityUnitOfMeasurement)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Protein)
+            @Html.DisplayFor(modelItem => item.Calories)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Carbohydrates)
+            @Html.DisplayFor(modelItem => item.Protein)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Fat)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Calories)
+            @Html.DisplayFor(modelItem => item.Carbohydrates)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DietaryFiber)

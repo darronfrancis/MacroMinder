@@ -16,7 +16,7 @@ namespace MacroMinder.Models
         public int RecipeID { get; set; }
         public Guid RecipeOwnerID { get; set; }
         public virtual ICollection<RecipeSteps> RecipeSteps { get; set; }
-        public virtual ICollection<IngredientList> Ingredients { get; set; }
+        public virtual ICollection<RecipeIngredient> Ingredients { get; set; }
         public string RecipeName { get; set; }
         public bool RecipeShared { get; set; }
         //public Image?? MyProperty { get; set; }

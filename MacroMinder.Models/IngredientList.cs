@@ -9,7 +9,7 @@ using static MacroMinder.Data.RecipeIngredient;
 
 namespace MacroMinder.Models
 {
-    public class IngredientEdit
+    public class IngredientList
     {
         [Display(Name = "Ingredient ID")]
         public int IngredientID { get; set; }

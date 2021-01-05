@@ -1,0 +1,90 @@
+﻿@model MacroMinder.Models.IngredientDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>IngredientDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IngredientID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IngredientID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IngredientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IngredientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IngredientShared)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IngredientShared)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IngredientQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IngredientQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calories)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calories)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Protein)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Protein)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Carbohydrates)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carbohydrates)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DietaryFiber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DietaryFiber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IngredientID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

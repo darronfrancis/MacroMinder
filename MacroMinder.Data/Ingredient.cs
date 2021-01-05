@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static MacroMinder.Data.IngredientList;
+using static MacroMinder.Data.RecipeIngredient;
 
 namespace MacroMinder.Models
 {
