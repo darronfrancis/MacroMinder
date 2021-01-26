@@ -17,13 +17,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Recipes", "", "Recipes")</li>
-                    <li>@Html.ActionLink("Ingredients", "", "Ingredients")</li>
+                    <li><a href="~/"><img src="~/Content/Images/macro-minder-logo.png" alt="Macro Minder" height="30" /></a></li>
+                    <li>@Html.ActionLink("Recipes", "", "Recipe")</li>
+                    <li>@Html.ActionLink("Ingredients", "", "Ingredient")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

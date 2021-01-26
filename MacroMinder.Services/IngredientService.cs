@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using IngredientList = MacroMinder.Models.IngredientList;
 
 namespace MacroMinder.Services
@@ -25,11 +26,12 @@ namespace MacroMinder.Services
                 var query =
                     ctx
                         .Ingredients
-                        //.Where(e => /*e.IngredientShared == true ||*/ e.ApplicationUserId == _userId)
+                        .Where(e => e.IngredientShared == true || e.IngredientOwner == _userId)
                         .Select(
                             e =>
                                 new IngredientList
                                 {
+                                    IngredientOwner = e.IngredientOwner,
                                     IngredientID = e.IngredientID,
                                     IngredientName = e.IngredientName,
                                     IngredientShared = e.IngredientShared,
@@ -43,17 +45,23 @@ namespace MacroMinder.Services
                                 }
                         );
 
+                var viewModel = new RecipeCreate
+                {
+                    RecipeIngredientList = new MultiSelectList(query, "IngredientID", "Ingredient")
+                };
+
                 return query.ToArray();
             }
         }
 
-        public bool CreateIngredient(IngredientCreate model)
+            public bool CreateIngredient(IngredientCreate model)
         {
-            ApplicationUser currentUser = new ApplicationUser();
+            //ApplicationUser currentUser = new ApplicationUser();
 
             var entity =
                 new Ingredient()
                 {
+                    IngredientOwner = _userId,
                     IngredientName = model.IngredientName,
                     IngredientShared = model.IngredientShared,
                     IngredientQuantity = model.IngredientQuantity,
@@ -79,10 +87,11 @@ namespace MacroMinder.Services
                 var entity =
                     ctx
                         .Ingredients
-                        .Single(e => /*e.IngredientID == id && e.IngredientShared == true ||*/ e.IngredientID == id /*&& e.ApplicationUserId == _userId*/);
+                        .Single(e => e.IngredientID == id && e.IngredientShared == true || e.IngredientID == id && e.IngredientOwner == _userId);
                 return
                     new IngredientDetail
                     {
+                        IngredientOwner = entity.IngredientOwner,
                         IngredientID = entity.IngredientID,
                         IngredientName = entity.IngredientName,
                         IngredientShared = entity.IngredientShared,
@@ -97,6 +106,22 @@ namespace MacroMinder.Services
             }
         }
 
+        public RecipeIngredient GetRecipeIngredientById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Ingredients
+                        .Single(e => e.IngredientID == id && e.IngredientShared == true || e.IngredientID == id && e.IngredientOwner == _userId);
+                return
+                    new RecipeIngredient
+                    {
+                        IngredientID = entity.IngredientID
+                    };
+            }
+        }
+
         public bool Edit(IngredientEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -104,7 +129,7 @@ namespace MacroMinder.Services
                 var entity =
                     ctx
                         .Ingredients
-                        .Single(e => e.IngredientID == model.IngredientID);
+                        .Single(e => e.IngredientID == model.IngredientID && e.IngredientOwner == _userId);
 
                     entity.IngredientID = model.IngredientID;
                     entity.IngredientName = model.IngredientName;

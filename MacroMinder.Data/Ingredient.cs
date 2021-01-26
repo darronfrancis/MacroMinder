@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static MacroMinder.Data.RecipeIngredient;
+using static MacroMinder.Data.UnitOfMeasurement;
 
 namespace MacroMinder.Models
 {
@@ -33,9 +34,6 @@ namespace MacroMinder.Models
         [Display(Name = "Dietary Fiber")]
         public double DietaryFiber { get; set; }
 
-        public Guid ApplicationUserId { get; set; }
-        public ApplicationUser IngredientOwner { get; set; }
-        public int? RecipeID { get; set; }
-        public Recipe Recipe { get; set; }
+        public Guid IngredientOwner { get; set; }
     }
 }

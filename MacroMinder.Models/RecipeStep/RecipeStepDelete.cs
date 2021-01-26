@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MacroMinder.Models
+namespace MacroMinder.Models.RecipeSteps
 {
-    public class RecipeStepsCreate
+    public class RecipeStepDelete
     {
+        [Display(Name = "Step Number")]
         public int StepNumber { get; set; }
-        [Required]
-        public string Step { get; set; }
+        [Display(Name = "Direction")]
+        public string StepInstruction { get; set; }
     }
 }

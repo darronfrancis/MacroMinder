@@ -56,23 +56,38 @@
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Ingredient.cs" />
-    <Compile Include="Migrations\202101050227433_first migration.cs" />
-    <Compile Include="Migrations\202101050227433_first migration.Designer.cs">
-      <DependentUpon>202101050227433_first migration.cs</DependentUpon>
+    <Compile Include="Migrations\202101210035070_Added Ingredient Layers &amp; Recipe Create.cs" />
+    <Compile Include="Migrations\202101210035070_Added Ingredient Layers &amp; Recipe Create.Designer.cs">
+      <DependentUpon>202101210035070_Added Ingredient Layers &amp; Recipe Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101210136357_removed virtual recipe from recipeIngredient.cs" />
+    <Compile Include="Migrations\202101210136357_removed virtual recipe from recipeIngredient.Designer.cs">
+      <DependentUpon>202101210136357_removed virtual recipe from recipeIngredient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101232049354_changed RecipeCreate ingredientID.cs" />
+    <Compile Include="Migrations\202101232049354_changed RecipeCreate ingredientID.Designer.cs">
+      <DependentUpon>202101232049354_changed RecipeCreate ingredientID.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RecipeIngredient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recipe.cs" />
-    <Compile Include="RecipeSteps.cs" />
+    <Compile Include="RecipeStep.cs" />
+    <Compile Include="UnitOfMeasurement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101050227433_first migration.resx">
-      <DependentUpon>202101050227433_first migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101210035070_Added Ingredient Layers &amp; Recipe Create.resx">
+      <DependentUpon>202101210035070_Added Ingredient Layers &amp; Recipe Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101210136357_removed virtual recipe from recipeIngredient.resx">
+      <DependentUpon>202101210136357_removed virtual recipe from recipeIngredient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101232049354_changed RecipeCreate ingredientID.resx">
+      <DependentUpon>202101232049354_changed RecipeCreate ingredientID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

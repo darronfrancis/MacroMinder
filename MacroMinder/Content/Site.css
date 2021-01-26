@@ -7,6 +7,13 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    color: #8ec453;
+    background-color: #333;
+    font-family: Arial;
+}
+
+.title {
+    font-family: fantasy;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -22,3 +29,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.navbar-custom .navbar-text {
+    color: green;
+} 

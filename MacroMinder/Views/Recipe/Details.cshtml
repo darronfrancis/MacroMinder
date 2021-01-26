@@ -1,0 +1,63 @@
+﻿@model MacroMinder.Models.RecipeDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Recipe Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RecipeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecipeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecipeShared)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecipeShared)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecipeDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecipeDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecipeSteps)
+        </dt>
+
+        <dd>
+            @foreach (var step in Model.RecipeSteps)
+            {
+                <p>@step.StepNumber @step.StepInstruction</p>
+            }
+        </dd>
+    </dl>
+</div>
+@using Microsoft.AspNet.Identity;
+@{var user = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());}
+@if (user.ToString() == Model.RecipeOwner.ToString())
+{
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.RecipeID }) |
+        @Html.ActionLink("Back to List", "Index")
+
+    </p>
+}
+else
+{
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,19 +1,14 @@
-﻿using MacroMinder.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static MacroMinder.Data.UnitOfMeasurement;
 
-namespace MacroMinder.Data
+namespace MacroMinder.Models
 {
-    public class RecipeIngredient
+    public class RecipeIngredientCreate
     {
-
-        [Key]
         public int IngredientListID { get; set; }
         public int RecipeID { get; set; }
         public int IngredientID { get; set; }

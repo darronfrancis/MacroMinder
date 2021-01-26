@@ -44,7 +44,8 @@ namespace MacroMinder.Data
         }
 
         public DbSet<Recipe> Recipes { get; set; }
-        public DbSet<RecipeSteps> RecipeSteps { get; set; }
+        public DbSet<RecipeStep> RecipeSteps { get; set; }
+        public DbSet<RecipeIngredient> RecipeIngredients { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
 
         public static ApplicationDbContext Create()

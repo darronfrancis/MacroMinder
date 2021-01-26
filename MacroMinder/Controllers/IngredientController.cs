@@ -11,7 +11,8 @@ using System.Web.Mvc;
 
 namespace MacroMinder.Controllers
 {
-    public class IngredientsController : Controller
+
+    public class IngredientController : Controller
     {
         private ApplicationDbContext _db = new ApplicationDbContext();
 
@@ -26,21 +27,9 @@ namespace MacroMinder.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            /*List<Ingredient> ingredientList = _db.Ingredients.ToList();
-            return View(ingredientList);*/
-
             var service = CreateIngredientService();
             var model = service.GetIngredients();
             return View(model);
-/*            using (var ctx = new ApplicationDbContext())
-            {
-                var entity =
-                    ctx
-                        .Ingredients
-                        .Where(e => e.IngredientShared == true || e.ApplicationUserId == userId);
-                return View(entity.ToList());
-            }
-            return View();*/
         }
 
         [Authorize]

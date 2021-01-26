@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MacroMinder.Models.RecipeList>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using Microsoft.AspNet.Identity;
+@{var user = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());}
+
+<h2 class="title">Index of Recipes</h2>
+<p>You can view the recipes you've created or other user's shared recipes, but you can only edit or delete recipes that you own.</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RecipeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecipeShared)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecipeDescription)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipeShared)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecipeDescription)
+            </td>
+            @if (user.ToString() == item.RecipeOwner.ToString())
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.RecipeID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.RecipeID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.RecipeID })
+                </td>
+            }
+            else
+            {
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.RecipeID })
+                </td>
+            }
+        </tr>
+    }
+
+</table>

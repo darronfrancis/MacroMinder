@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static MacroMinder.Data.RecipeIngredient;
+using static MacroMinder.Data.UnitOfMeasurement;
 
 namespace MacroMinder.Models
 {

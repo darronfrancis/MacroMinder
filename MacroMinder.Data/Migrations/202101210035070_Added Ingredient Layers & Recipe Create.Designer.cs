@@ -7,13 +7,13 @@ namespace MacroMinder.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class firstmigration : IMigrationMetadata
+    public sealed partial class AddedIngredientLayersRecipeCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(firstmigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedIngredientLayersRecipeCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101050227433_first migration"; }
+            get { return "202101210035070_Added Ingredient Layers & Recipe Create"; }
         }
         
         string IMigrationMetadata.Source

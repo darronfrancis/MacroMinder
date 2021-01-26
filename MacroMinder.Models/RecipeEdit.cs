@@ -1,5 +1,4 @@
 ﻿using MacroMinder.Data;
-using MacroMinder.Models.RecipeSteps;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,7 +9,7 @@ using System.Web.Mvc;
 
 namespace MacroMinder.Models
 {
-    public class RecipeCreate
+    public class RecipeEdit
     {
         public int RecipeID { get; set; }
         [Required]
@@ -25,7 +24,7 @@ namespace MacroMinder.Models
         [Display(Name = "Directions")]
         public int RecipeStepID { get; set; }
         [DataType(DataType.MultilineText)]
-        public string RecipeSteps { get; set; }
+        public ICollection<RecipeStep> RecipeSteps { get; set; }
         public int RecipeIngredientID { get; set; }
         public int IngredientID { get; set; }
         [Display(Name = "Ingredients")]
