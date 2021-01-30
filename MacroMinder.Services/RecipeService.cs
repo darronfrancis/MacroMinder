@@ -90,11 +90,7 @@ namespace MacroMinder.Services
                 foreach (var ingredient in ingredients)
                 {
                     var selected = service.GetRecipeIngredientById(ingredient);
-                    entity.RecipeIngredients.Add(new RecipeIngredient()
-                    {
-                        IngredientID = selected.IngredientID,
-                        RecipeID = selected.RecipeID
-                    });
+                    entity.RecipeIngredients.Add(selected);
                 }
 
                 return ctx.SaveChanges() == 1;
